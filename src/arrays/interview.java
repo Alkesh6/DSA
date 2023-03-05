@@ -31,28 +31,70 @@ public class interview {
     // }
 
     // Max Product
-    static String maxProduct(int[] arr){
-        int maxProduct = 0;
-        String pairs = "";
-        for(int i = 0;i < arr.length;i++){
-            for(int j = i + 1;j < arr.length;j++){
-                if (arr[i] * arr[j] > maxProduct) {
-                    maxProduct = arr[i] * arr[j];
-                    pairs = Integer.toString(arr[i]) + "," + Integer.toString(arr[j]);
+    // static String maxProduct(int[] arr){
+    //     int maxProduct = 0;
+    //     String pairs = "";
+    //     for(int i = 0;i < arr.length;i++){
+    //         for(int j = i + 1;j < arr.length;j++){
+    //             if (arr[i] * arr[j] > maxProduct) {
+    //                 maxProduct = arr[i] * arr[j];
+    //                 pairs = Integer.toString(arr[i]) + "," + Integer.toString(arr[j]);
+    //             }
+    //         }
+    //     }
+    //     return pairs;
+    // }
+
+    //IsUnique
+    // static void isUnique(int[] arr,int ele){
+    //     for(int i=0;i<arr.length;i++){
+    //         if(arr[i] == ele){
+    //             System.out.println(ele + " is not unique and is present at index " + i);
+    //             return;
+    //         }
+    //         else{
+    //             System.out.println(ele + " is not present in the array");
+    //             return;
+    //         }
+    //     }
+    // }
+
+
+    // With return type boolean
+    // static boolean isUnique(int[] arr,int ele){
+    //     for(int i=0;i<arr.length;i++){
+    //         if(arr[i] == ele){
+    //             System.out.println(ele + " is not unique and is present at index " + i);
+    //             return false;
+    //         }
+    //     }
+    //     System.out.println(ele + " is not present in the array");
+    //     return true;
+    // }
+
+    //Permutation
+    static boolean permutation(int[] arr3,int[] arr4){
+        for(int k=0;k<arr3.length;k++){
+            for(int j = arr4.length-1;j >= 0;j--){
+                if(arr3[k] == arr4[j]) {
+                    System.out.println("element equal at index "+k+" "+j);
+                    // return true;
                 }
             }
         }
-        return pairs;
+        return false;
     }
 
     public static void main(String[] args) {
         // int arr[] = {1,2,3,4,5,6,8,9,10};
         // missingNum(arr);
         int[] arr1 = {10,20,30,40};
+        int[] arr2 = {40,30,90,10};
         // twoSum(arr1, 9);
-        String pairs = maxProduct(arr1);
-        System.out.println(pairs);
-        maxProduct(arr1);
+        // String pairs = maxProduct(arr1);
+        // System.out.println(pairs);
+        // maxProduct(arr1);
+        // isUnique(arr1, 10);
+        permutation(arr1, arr2);
     }
-    
 }
